@@ -3,64 +3,71 @@
 Personal portfolio website for Simon Ho built with Astro and Tailwind CSS.
 
 ## Overview
-This repository contains a fast, minimal portfolio site built with `astro` and styled with Tailwind CSS. Content is driven from `src/config.ts`, and the site is deployed to GitHub Pages via the workflow at `.github/workflows/deploy.yml`.
 
-## Tech stack
-- Astro
-- Tailwind CSS (via `@tailwindcss/vite`)
-- Vite
-- GitHub Actions (Pages)
+Fast, minimal portfolio site built with Astro and styled with Tailwind CSS. Content is driven from `src/config.ts`, and the site is deployed to GitHub Pages via workflow automation.
 
-## Quick start
+## Tech Stack
 
-Requirements:
-- Node.js 18+
-- `npm`
+- **Astro 5.12.3** — Modern static site generator
+- **Tailwind CSS 4.1.11** — Utility-first CSS via @tailwindcss/vite
+- **TypeScript** — Strict mode enabled
+- **Vite** — Build tool and dev server
+- **GitHub Actions** — Automated deployment to Pages
 
-Install dependencies:
-```zsh
+## Quick Start
+
+Requirements: Node.js 18+ and npm
+
+```bash
+# Install dependencies
 npm ci
-```
 
-Run development server:
-```zsh
+# Start development server
 npm run dev
-```
 
-Open the URL printed in the terminal (usually http://localhost:3000).
-
-Build for production:
-```zsh
+# Build for production
 npm run build
-```
 
-Preview the built output locally:
-```zsh
+# Preview production build locally
 npm run preview
+
+# Type checking
+npx astro check
+
+# Linting
+npm run lint
+
+# Fix linting issues
+npm run lint:fix
 ```
 
 ## Configuration
-- Main site config and personal content are in config.ts. Update siteConfig there to change name, title, description, social links, skills, projects, experience, and education.
-- Site configuration for Astro is in astro.config.mjs.
-- Pages and components live under pages and components.
+
+Edit `src/config.ts` to customize:
+- Personal info (name, title, description)
+- Social links
+- About section text
+- Skills list
+- Projects, experience, and education entries
+
+Edit `astro.config.mjs` for Astro/Vite configuration.
+
+## Project Structure
+
+```
+src/
+  ├── components/       # Reusable Astro components
+  ├── pages/           # Page routes (index.astro is home)
+  ├── styles/          # Global styles (global.css)
+  └── config.ts        # Site configuration and content data
+```
 
 ## Deployment
-This repo deploys to GitHub Pages using the workflow at `deploy.yml`. The workflow:
 
-- Runs on pushes to `main` (or manually via `workflow_dispatch`)
-- Builds the site with the `withastro/action` action
-- Deploys using `actions/deploy-pages`
+Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`:
+- Runs linting and type checks before building
+- Uses `withastro/action` for building
+- Deploys with `actions/deploy-pages`
+- Requires GitHub Pages enabled with repository permissions
 
-No additional configuration should be required on GitHub if GitHub Pages is enabled for this repo; the workflow uses repository permissions to create the page deployment.
-
-## Editing content
-- To update text, projects, or experience entries, edit `config.ts`.
-- To change layout or styling, edit files in `components` and `styles`.
-
-## Project structure 
-- `astro.config.mjs` — Astro configuration, Vite plugins.
-- `package.json` — Scripts: `dev`, `build`, `preview`.
-- `config.ts` — Primary site data (name, social links, about, projects, experience).
-- `index.astro` — Home page.
-- `components` — Page components.
-- `deploy.yml` — GitHub Actions deployment pipeline.
+Live site: https://halfguru.github.io
