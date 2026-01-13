@@ -55,7 +55,7 @@ export const siteConfig = {
     {
       name: "halfguru (GitHub Profile Banner)",
       description:
-        "A Rust- powered dynamic SVG generator for my GitHub profile README. Inspired by neofetch, it renders system-style stats, icons, and layout entirely in Rust with zero frontend dependencies. The project focuses on clean rendering logic, efficient data formatting, and producing a polished SVG that updates on each run.",
+        "A Rust-powered dynamic SVG generator for my GitHub profile README. Inspired by neofetch, it renders system-style stats, icons, and layout entirely in Rust with zero frontend dependencies. The project focuses on clean rendering logic, efficient data formatting, and producing a polished SVG that updates on each run.",
       link: "https://github.com/halfguru/halfguru",
       skills: ["Rust", "SVG"],
     },
