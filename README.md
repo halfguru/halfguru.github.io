@@ -1,73 +1,72 @@
-# halfguru.github.io
+# Simon Ho — Portfolio
 
-Personal portfolio website for Simon Ho built with Astro and Tailwind CSS.
+[![Deploy to GitHub Pages](https://github.com/halfguru/halfguru.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/halfguru/halfguru.github.io/actions/workflows/deploy.yml)
+[![Astro](https://img.shields.io/badge/Astro-5.12-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-## Overview
+A fast, minimal portfolio website built with Astro and Tailwind CSS. Content is configured through a single `src/config.ts` file and deployed to GitHub Pages.
 
-Fast, minimal portfolio site built with Astro and styled with Tailwind CSS. Content is driven from `src/config.ts`, and the site is deployed to GitHub Pages via workflow automation.
+**Live site**: [halfguru.github.io](https://halfguru.github.io)
 
-## Tech Stack
+![Portfolio Screenshot](./screenshot.png)
 
-- **Astro 5.12.3** — Modern static site generator
-- **Tailwind CSS 4.1.11** — Utility-first CSS via @tailwindcss/vite
-- **TypeScript** — Strict mode enabled
-- **Vite** — Build tool and dev server
-- **GitHub Actions** — Automated deployment to Pages
+## Features
+
+- Single-file configuration for all content
+- Dark mode with system preference detection
+- Responsive, mobile-first design
+- SEO optimized (sitemap, Open Graph, JSON-LD)
+- Automatic deployment via GitHub Actions
+- TypeScript strict mode
+- ESLint + Astro plugin
 
 ## Quick Start
 
-Requirements: Node.js 18+ and npm
-
 ```bash
-# Install dependencies
-npm ci
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Type checking
-npx astro check
-
-# Linting
-npm run lint
-
-# Fix linting issues
-npm run lint:fix
+npm ci              # Install dependencies
+npm run dev         # Start dev server (localhost:4321)
+npm run build       # Production build
+npm run preview     # Preview build locally
+npx astro check     # Type checking
+npm run lint        # Lint
 ```
+
+**Requirements**: Node.js 18+
 
 ## Configuration
 
 Edit `src/config.ts` to customize:
-- Personal info (name, title, description)
-- Social links
-- About section text
-- Skills list
-- Projects, experience, and education entries
 
-Edit `astro.config.mjs` for Astro/Vite configuration.
+| Property | Description |
+|----------|-------------|
+| `name`, `title`, `description` | Site metadata |
+| `accentColor` | Primary color (hex) |
+| `social` | Email, LinkedIn, Twitter, GitHub links |
+| `aboutMe` | Bio text |
+| `skills` | Array of skill strings |
+| `projects` | Projects with name, description, link, skills |
+| `experience` | Work history with company, title, dateRange, bullets |
+| `education` | Schools with degree, dateRange, achievements |
 
 ## Project Structure
 
 ```
 src/
-  ├── components/       # Reusable Astro components
-  ├── pages/           # Page routes (index.astro is home)
-  ├── styles/          # Global styles (global.css)
-  └── config.ts        # Site configuration and content data
+├── components/    # Astro components (Header, Hero, About, etc.)
+├── pages/         # Routes (index.astro)
+├── styles/        # Global CSS
+└── config.ts      # Site content and configuration
 ```
 
 ## Deployment
 
-Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`:
-- Runs linting and type checks before building
-- Uses `withastro/action` for building
-- Deploys with `actions/deploy-pages`
-- Requires GitHub Pages enabled with repository permissions
+Automatically deploys to GitHub Pages on push to `main`:
 
-Live site: https://halfguru.github.io
+1. Lint and type check
+2. Build with `withastro/action`
+3. Deploy with `actions/deploy-pages`
+
+## License
+
+MIT

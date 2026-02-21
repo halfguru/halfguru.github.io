@@ -1,4 +1,19 @@
-_site
-node_modules/
-.astro/
+# Build output
 dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
